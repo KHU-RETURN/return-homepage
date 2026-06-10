@@ -143,6 +143,7 @@ export default function About() {
           {[
             { tag: 'GAME', name: 'RCK', desc: '동아리 내부 게임 대회. 개발 외의 방식으로도 함께 경쟁합니다.' },
             { tag: 'SOCIAL', name: '개강·종강총회', desc: '학기 시작과 끝을 함께 마무리하는 동아리 전체 모임.' },
+            { tag: 'SOCIAL', name: '사막', desc: '매년 봄에 진행하는 단체 행사.' },
             { tag: 'SOCIAL', name: 'MT · 밥조 · 모각코', desc: '동아리원끼리 더 가까워지는 소소한 자리들.' },
           ].map((event) => (
             <li key={event.name} className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-6">

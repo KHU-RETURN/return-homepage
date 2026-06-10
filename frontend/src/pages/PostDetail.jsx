@@ -40,6 +40,11 @@ export default function PostDetail() {
   // 글쓴이 본인이거나 운영진이면 수정·삭제 가능
   const canEdit = user && post && (user.id === post.author_id || user.role === 'admin')
 
+  // 파일 확장자로 이미지 첨부인지 판별한다
+  function isImage(filename) {
+    return /\.(png|jpe?g|gif|webp|bmp|svg)$/i.test(filename)
+  }
+
   async function handleDeletePost() {
     if (!window.confirm('이 글을 삭제할까요?')) return
     try {
@@ -128,18 +133,45 @@ export default function PostDetail() {
       {post.attachments?.length > 0 && (
         <section className="mt-12">
           <h2 className="font-mono text-sm text-gray-500">ATTACHMENTS</h2>
-          <ul className="mt-2 divide-y divide-gray-300 border-y border-gray-300">
-            {post.attachments.map((file) => (
-              <li key={file.id}>
-                <a
-                  href={`/api/files/${file.id}`}
-                  className="block py-3 font-mono text-sm underline underline-offset-4 transition-colors duration-100 hover:bg-gray-100"
-                >
-                  ↓ {file.filename}
-                </a>
-              </li>
-            ))}
-          </ul>
+
+          {/* 이미지 첨부는 링크 대신 화면에 바로 펼쳐 보여준다 */}
+          {post.attachments.some((file) => isImage(file.filename)) && (
+            <div className="mt-4 space-y-6">
+              {post.attachments
+                .filter((file) => isImage(file.filename))
+                .map((file) => (
+                  <figure key={file.id}>
+                    <img
+                      src={`/api/files/${file.id}`}
+                      alt={file.filename}
+                      loading="lazy"
+                      className="max-h-[640px] max-w-full border border-gray-300"
+                    />
+                    <figcaption className="mt-2 font-mono text-xs text-gray-500">
+                      {file.filename}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
+          )}
+
+          {/* 이미지가 아닌 첨부는 기존처럼 다운로드 링크로 보여준다 */}
+          {post.attachments.some((file) => !isImage(file.filename)) && (
+            <ul className="mt-4 divide-y divide-gray-300 border-y border-gray-300">
+              {post.attachments
+                .filter((file) => !isImage(file.filename))
+                .map((file) => (
+                  <li key={file.id}>
+                    <a
+                      href={`/api/files/${file.id}`}
+                      className="block py-3 font-mono text-sm underline underline-offset-4 transition-colors duration-100 hover:bg-gray-100"
+                    >
+                      ↓ {file.filename}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          )}
         </section>
       )}
 
