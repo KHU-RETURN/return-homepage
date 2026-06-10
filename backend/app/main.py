@@ -24,3 +24,21 @@ mount_admin(app, engine)
 @app.get("/api/health")
 def health_check():
     return {"status": "ok"}
+
+
+from pathlib import Path
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+DIST_DIR = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+
+if DIST_DIR.exists():
+    app.mount("/assets", StaticFiles(directory=DIST_DIR / "assets"), name="assets")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    def serve_spa(full_path: str):
+        candidate = DIST_DIR / full_path
+        if full_path and candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(DIST_DIR / "index.html")
