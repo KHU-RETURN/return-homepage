@@ -73,14 +73,14 @@ export default function Home() {
             </span>
           </h1>
           <p className="animate-rise mt-10 max-w-[720px] text-xl leading-relaxed text-gray-300 [animation-delay:180ms]">
-            함께 공부하고, 만들고, 출전합니다.
+            함께 배우고, 만들고, 이뤄 나갑니다.
           </p>
           <div className="animate-rise mt-12 flex flex-wrap gap-4 [animation-delay:240ms]">
             <Link
               to="/recruit"
               className="bg-paper px-8 py-3 text-sm font-bold text-ink transition-colors duration-100 hover:bg-gray-300"
             >
-              입부 지원하기
+              지원하기
             </Link>
             <Link
               to="/about"
@@ -227,7 +227,7 @@ export default function Home() {
             to="/recruit"
             className="mt-12 inline-block bg-paper px-10 py-4 text-sm font-bold text-ink transition-colors duration-100 hover:bg-gray-300"
           >
-            입부 지원하기 →
+            지원하기 →
           </Link>
         </div>
       </section>
