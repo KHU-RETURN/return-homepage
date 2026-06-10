@@ -1,9 +1,18 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchAwards } from '../api/client.js'
 
 export default function Home() {
+  const [recentAwards, setRecentAwards] = useState([])
+
+  useEffect(() => {
+    fetchAwards()
+      .then((awards) => setRecentAwards(awards.slice(0, 3)))
+      .catch(() => setRecentAwards([]))
+  }, [])
+
   return (
     <div className="relative overflow-hidden">
-      {/* 루프 로고 워터마크 — DESIGN.md의 유일한 그래픽 모티프 */}
       <img
         src="/return-logo.png"
         alt=""
@@ -35,6 +44,29 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {recentAwards.length > 0 && (
+        <section className="mx-auto max-w-[1120px] px-6 pb-24">
+          <div className="flex items-baseline justify-between">
+            <h2 className="font-mono text-sm text-gray-500">RECENT AWARDS</h2>
+            <Link to="/awards" className="text-sm underline underline-offset-4">
+              전체 보기
+            </Link>
+          </div>
+          <ul className="mt-4 divide-y divide-gray-300 border-y border-gray-300">
+            {recentAwards.map((award) => (
+              <li key={award.id} className="flex gap-6 py-4">
+                <span className="font-mono text-sm text-gray-500">
+                  {award.awarded_on}
+                </span>
+                <span className="text-sm font-bold">
+                  {award.competition} — {award.title}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   )
 }
