@@ -17,7 +17,7 @@ export default function Awards() {
       <div className="mt-16">
         {error && <p className="text-error">{error}</p>}
         {!error && awards === null && <p className="text-gray-500">불러오는 중…</p>}
-        {awards?.length === 0 && (
+        {!error && awards?.length === 0 && (
           <p className="text-gray-500">등록된 수상 내역이 없습니다.</p>
         )}
         {awards?.length > 0 && (

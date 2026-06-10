@@ -5,8 +5,8 @@ const EMPTY = { name: '', student_id: '', phone: '', email: '', motivation: '' }
 
 const fields = [
   { name: 'name', label: '이름', type: 'text', placeholder: '홍길동' },
-  { name: 'student_id', label: '학번', type: 'text', placeholder: '2026000000' },
-  { name: 'phone', label: '연락처', type: 'tel', placeholder: '010-0000-0000' },
+  { name: 'student_id', label: '학번', type: 'text', placeholder: '2026000000', mono: true },
+  { name: 'phone', label: '연락처', type: 'tel', placeholder: '010-0000-0000', mono: true },
   { name: 'email', label: '이메일', type: 'email', placeholder: 'you@khu.ac.kr' },
 ]
 
@@ -69,7 +69,7 @@ export default function Recruit() {
                   value={form[field.name]}
                   onChange={handleChange}
                   required
-                  className="mt-2 w-full rounded-sm border border-gray-300 bg-paper px-4 py-3 text-sm focus:border-ink focus:outline-none"
+                  className={`mt-2 w-full rounded-sm border border-gray-300 bg-paper px-4 py-3 text-sm focus:border-ink focus:outline-none${field.mono ? ' font-mono' : ''}`}
                 />
               </label>
             ))}
