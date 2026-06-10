@@ -2,7 +2,6 @@
 
 경희대학교 컴퓨터공학부 학술동아리 RETURN(1988년 창립)의 공식 홈페이지.
 
-- 설계 문서: `docs/superpowers/specs/2026-06-10-return-homepage-design.md`
 - 스택: React + Vite (JavaScript) + Tailwind / FastAPI + SQLAlchemy + SQLite / SQLAdmin
 - 배포: Docker·Nginx 없이 uvicorn 단일 프로세스 + systemd (`deploy.sh`)
 - 원칙: 신입생이 유지보수하며 배울 수 있도록, 개념이 눈에 보이는 단순한 구조 유지
