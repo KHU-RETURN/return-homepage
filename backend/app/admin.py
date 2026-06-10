@@ -37,6 +37,7 @@ class ApplicationAdmin(ModelView, model=Application):
     name_plural = "지원서"
     can_create = False
     can_edit = False
+    can_delete = False
     column_list = [Application.id, Application.name, Application.student_id, Application.created_at]
 
 
