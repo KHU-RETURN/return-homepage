@@ -44,24 +44,25 @@ export default function Home() {
 
   return (
     <div>
-      {/* 다크 히어로: 잉크 풀블리드 + 거대 워드마크 + 데이터 스트립 */}
-      <section className="relative flex min-h-[92vh] flex-col overflow-hidden bg-ink text-paper">
+      {/* 다크 히어로: 잉크 풀블리드 + 거대 워드마크 + 데이터 스트립.
+          첫 화면 하단에 마퀴가 절반쯤 걸치도록 높이를 잡는다 — 스크롤 유도 */}
+      <section className="relative flex min-h-[calc(100svh-6rem)] flex-col overflow-hidden bg-ink text-paper">
         <img
-          src="/return-logo.png"
+          src="/return-black.svg"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 top-1/2 w-[560px] -translate-y-1/2 opacity-15 invert"
+          className="pointer-events-none absolute -right-24 top-1/2 w-[560px] -translate-y-1/2 opacity-25 mix-blend-lighten"
         />
 
         {/* 상단 메타 행: 도면의 라벨처럼 */}
-        <div className="relative mx-auto flex w-full max-w-[1120px] items-baseline justify-between px-6 pt-10 font-mono text-xs tracking-widest text-gray-500">
+        <div className="relative mx-auto flex w-full max-w-[1120px] items-baseline justify-between px-6 pt-8 font-mono text-xs tracking-widest text-gray-500">
           <span className="animate-rise">EST. 1988</span>
           <span className="animate-rise [animation-delay:60ms]">
             KYUNG HEE UNIV. — CSE
           </span>
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1120px] flex-1 flex-col justify-center px-6 py-16">
+        <div className="relative mx-auto flex w-full max-w-[1120px] flex-1 flex-col justify-center px-6 py-10">
           <p className="animate-rise font-mono text-sm text-gray-300 [animation-delay:60ms]">
             경희대학교 컴퓨터공학부 학술동아리
           </p>
