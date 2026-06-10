@@ -8,7 +8,7 @@
 set -euo pipefail
 
 REPO_URL="https://github.com/KHU-RETURN/return-homepage.git" # ← 실제 저장소 주소로 수정
-APP_DIR="$HOME/return-hompage"
+APP_DIR="$HOME/return-homepage"
 
 # 코드를 교체해도 지키고 싶은 것들 (git이 관리하지 않는 운영 데이터)
 KEEP=(backend/.env.production backend/return.db backend/uploads)
