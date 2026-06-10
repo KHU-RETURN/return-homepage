@@ -76,7 +76,7 @@ export default function About() {
             {
               no: '04',
               title: '오픈스터디 (2020~)',
-              body: '비회원도 참여할 수 있는 오픈 스터디 제도. 더 많은 사람과 함께 배웁니다.',
+              body: '스터디뿐 아니라 소모임도 지원합니다. 자기계발·학술·친목 등 자유 주제로 모임을 꾸리면 활동비를 지원하는 제도입니다.',
             },
           ].map((item) => (
             <div key={item.no} className="group bg-paper p-8 transition-colors duration-100 hover:bg-ink hover:text-paper">
