@@ -1,0 +1,65 @@
+[
+  {
+    "title": "우수상",
+    "competition": "쿠톤(Khuthon) 2017 — 경희대학교 해커톤",
+    "winners": "김현우, 조서희, 심건우",
+    "awarded_on": "2017-11-01",
+    "description": "Ren'py 엔진을 활용한 비주얼 노벨 게임을 제작하여 경희대학교 해커톤 쿠톤에서 우수상을 수상하였습니다."
+  },
+  {
+    "title": "우수 동아리 선정",
+    "competition": "SW중심대학사업단 전자정보대학 우수 동아리",
+    "winners": "RETURN",
+    "awarded_on": "2017-12-01",
+    "description": "경희대학교 SW중심대학사업단 전자정보대학 우수 동아리로 선정되어 상금을 수여받았습니다."
+  },
+  {
+    "title": "우수상",
+    "competition": "쿠톤(Khuthon) 2018 — 경희대학교 해커톤",
+    "winners": "심건우",
+    "awarded_on": "2018-05-01",
+    "description": "Ren'py를 이용한 비주얼 노벨 게임으로 쿠톤 2018에 참가하여 우수상을 수상하였습니다."
+  },
+  {
+    "title": "대상 및 우수상",
+    "competition": "유니톤 9기 해커톤",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-11-01",
+    "description": "대학생 연합 해커톤 유니톤 9기에서 RETURN 팀이 대상과 우수상을 동시에 수상하였습니다."
+  },
+  {
+    "title": "대구광역시장상",
+    "competition": "의료 빅데이터 활용 AI 영상진단 개발 해커톤",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-10-01",
+    "description": "의료 빅데이터와 AI 영상진단 기술을 결합한 솔루션으로 대구광역시 주최 해커톤에서 대구광역시장상을 받았습니다."
+  },
+  {
+    "title": "우수상",
+    "competition": "웅진씽크빅 AI 게임 개발 챌린지",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-08-01",
+    "description": "웅진씽크빅이 주최한 AI 게임 개발 챌린지에서 RETURN 팀이 우수상을 수상하였습니다."
+  },
+  {
+    "title": "수상",
+    "competition": "KHUggle AI 경진대회",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-06-01",
+    "description": "경희대학교 AI 경진대회 KHUggle에 참가하여 수상하였습니다."
+  },
+  {
+    "title": "우수상",
+    "competition": "Medical Synthetic Data AI Challenge",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-12-01",
+    "description": "의료 합성 데이터를 활용한 AI 모델 개발 대회에서 우수상을 수상하였습니다."
+  },
+  {
+    "title": "장려상",
+    "competition": "소프트웨어융합대학 동아리 단합 공모전",
+    "winners": "RETURN 동아리원 팀",
+    "awarded_on": "2022-06-15",
+    "description": "경희대학교 소프트웨어융합대학 주최 동아리 단합 공모전에 2개 팀이 참가하여 장려상을 받았습니다."
+  }
+]
