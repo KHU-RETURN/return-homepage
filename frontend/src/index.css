@@ -25,6 +25,23 @@ body {
   line-height: 1.7;
 }
 
+/* 드래그 선택도 흑백 반전 — 사이트 전체의 시그니처 */
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* 키보드 포커스: 둥글기 없는 2px 잉크 아웃라인 */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+/* 모노 폰트 숫자는 자리수 정렬 (날짜·학번·번호) */
+.font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
 /* 마퀴 스트립: 같은 콘텐츠를 2벌 이어붙이고 -50%까지 밀면 끊김 없는 루프가 된다 */
 @keyframes marquee {
   from {
@@ -39,8 +56,42 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+/* 터미널 커서: 워드마크 끝에서 깜빡이는 블록 */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-caret {
+  animation: caret-blink 1.2s step-end infinite;
+}
+
+/* 페이지 진입 시 요소 등장 (DESIGN.md short: 200ms, ease-out) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 200ms ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-caret,
+  .animate-rise {
     animation: none;
   }
 }

@@ -64,7 +64,8 @@
 - **Approach:** minimal-functional — 이해를 돕는 전환만. 스크롤 트리거 애니메이션·패럴랙스 금지.
 - **Easing:** enter(ease-out) exit(ease-in) move(ease-in-out)
 - **Duration:** micro(100ms — hover) short(200ms — 페이지 요소 등장, 드롭다운)
-- **허용 목록:** 링크/버튼 hover 전환, 모달·드롭다운 페이드, 폼 에러 메시지 등장, 마퀴 스트립(CSS keyframes, 등속, `prefers-reduced-motion: reduce`면 정지). 그 외 전부 금지.
+- **허용 목록:** 링크/버튼 hover 전환, 모달·드롭다운 페이드, 폼 에러 메시지 등장, 마퀴 스트립(CSS keyframes, 등속, `prefers-reduced-motion: reduce`면 정지), 터미널 캐럿 블링크(워드마크 끝 `_`, step-end 1.2s), 페이지 진입 시 1회 rise 등장(200ms ease-out, 60ms 간격 스태거). 그 외 전부 금지.
+- **시그니처 디테일:** `::selection` 흑백 반전, 키보드 포커스는 2px 잉크 아웃라인(둥글기 없음), 모노 숫자는 tabular-nums.
 
 ## Anti-patterns (이 프로젝트에서 금지)
 - 그라데이션 (버튼, 배경, 텍스트 전부)

@@ -33,8 +33,8 @@ export default function Activities() {
           const items = activities.filter((a) => a.kind === kind.key)
           return (
             <section key={kind.key} className="mt-20">
-              <div className="flex items-baseline gap-4 border-b border-ink pb-4">
-                <span className="font-mono text-xl text-gray-500">
+              <div className="flex items-baseline gap-6 border-b border-ink pb-4">
+                <span className="text-outline font-display text-5xl font-bold text-ink">
                   {kind.no}
                 </span>
                 <h2 className="text-2xl font-bold">{kind.label}</h2>
@@ -46,7 +46,10 @@ export default function Activities() {
               ) : (
                 <div className="mt-6 grid gap-px border border-gray-300 bg-gray-300 md:grid-cols-3">
                   {items.map((activity) => (
-                    <div key={activity.id} className="bg-paper p-8">
+                    <div
+                      key={activity.id}
+                      className="bg-paper p-8 transition-colors duration-100 hover:bg-gray-100"
+                    >
                       <h3 className="text-lg font-bold">{activity.title}</h3>
                       <p className="mt-3 text-sm leading-relaxed text-gray-700">
                         {activity.description}

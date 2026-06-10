@@ -30,8 +30,10 @@ export default function About() {
       <section className="bg-ink text-paper">
         <div className="mx-auto grid max-w-[1120px] gap-12 px-6 py-24 md:grid-cols-[1fr_2fr]">
           <div>
-            <span className="font-mono text-xl text-gray-500">01</span>
-            <h2 className="mt-4 text-3xl font-bold leading-tight">
+            <span className="text-outline font-display text-6xl font-bold text-paper">
+              01
+            </span>
+            <h2 className="mt-6 text-3xl font-bold leading-tight">
               1988년부터,
               <br />
               다시 돌아오는 곳
@@ -52,18 +54,23 @@ export default function About() {
       </section>
 
       <section className="mx-auto max-w-[1120px] px-6 py-24">
-        <div className="flex items-baseline gap-4">
-          <span className="font-mono text-xl text-gray-500">02</span>
+        <div className="flex items-baseline gap-6">
+          <span className="text-outline font-display text-6xl font-bold text-ink">
+            02
+          </span>
           <h2 className="text-3xl font-bold">무엇을 하나요</h2>
         </div>
         <div className="mt-10 grid gap-px border border-gray-300 bg-gray-300 md:grid-cols-3">
           {activities.map((activity) => (
-            <div key={activity.no} className="bg-paper p-8">
+            <div
+              key={activity.no}
+              className="group bg-paper p-8 transition-colors duration-100 hover:bg-ink hover:text-paper"
+            >
               <span className="font-mono text-sm text-gray-500">
                 {activity.no}
               </span>
               <h3 className="mt-6 text-lg font-bold">{activity.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-700">
+              <p className="mt-3 text-sm leading-relaxed text-gray-700 transition-colors duration-100 group-hover:text-gray-300">
                 {activity.body}
               </p>
             </div>

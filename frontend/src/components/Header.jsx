@@ -13,10 +13,13 @@ export default function Header() {
   const { user } = useAuth()
 
   return (
-    <header className="bg-ink text-paper">
+    <header className="sticky top-0 z-50 border-b border-gray-700 bg-ink text-paper">
       <div className="mx-auto flex min-h-16 max-w-[1120px] flex-wrap items-center gap-x-8 gap-y-2 px-6 py-3">
         <Link to="/" className="font-display text-xl font-bold tracking-tight">
           RETURN
+          <span aria-hidden="true" className="animate-caret">
+            _
+          </span>
         </Link>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-1">
           {menus.map((menu) => (
