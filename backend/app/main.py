@@ -41,7 +41,9 @@ if DIST_DIR.exists():
 
     @app.get("/{full_path:path}", include_in_schema=False)
     def serve_spa(full_path: str):
-        candidate = DIST_DIR / full_path
-        if full_path and candidate.is_file():
-            return FileResponse(candidate)
+        if full_path:
+            candidate = (DIST_DIR / full_path).resolve()
+            # path traversal guard: ensure the resolved path is inside DIST_DIR
+            if candidate.is_file() and candidate.is_relative_to(DIST_DIR.resolve()):
+                return FileResponse(candidate)
         return FileResponse(DIST_DIR / "index.html")
