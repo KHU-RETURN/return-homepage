@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* DESIGN.md의 디자인 토큰. 색·폰트를 바꾸려면 DESIGN.md를 먼저 수정할 것. */
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #fafafa;
+  --color-gray-100: #f0f0f0;
+  --color-gray-300: #d4d4d4;
+  --color-gray-500: #8a8a8a;
+  --color-gray-700: #4a4a4a;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  --font-display: "Space Grotesk", "Pretendard Variable", sans-serif;
+  --font-sans: "Pretendard Variable", Pretendard, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+}
