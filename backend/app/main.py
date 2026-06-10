@@ -4,7 +4,7 @@ from fastapi import FastAPI
 
 from app.admin import mount_admin
 from app.database import Base, engine
-from app.routers import applications, awards
+from app.routers import activities, applications, auth, awards, posts
 
 
 @asynccontextmanager
@@ -17,6 +17,9 @@ app = FastAPI(title="RETURN Homepage API", lifespan=lifespan)
 
 app.include_router(awards.router)
 app.include_router(applications.router)
+app.include_router(auth.router)
+app.include_router(activities.router)
+app.include_router(posts.router)
 
 mount_admin(app, engine)
 

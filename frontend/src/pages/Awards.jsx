@@ -12,7 +12,9 @@ export default function Awards() {
   return (
     <div className="mx-auto max-w-[1120px] px-6 py-24">
       <p className="font-mono text-sm text-gray-500">AWARDS</p>
-      <h1 className="mt-4 text-4xl font-bold">수상 내역</h1>
+      <h1 className="mt-4 font-display text-[clamp(2.5rem,6vw,4rem)] font-bold leading-none tracking-tight">
+        수상 내역
+      </h1>
 
       <div className="mt-16">
         {error && <p className="text-error">{error}</p>}
@@ -23,7 +25,10 @@ export default function Awards() {
         {awards?.length > 0 && (
           <ul className="divide-y divide-gray-300 border-y border-gray-300">
             {awards.map((award) => (
-              <li key={award.id} className="grid gap-2 py-6 md:grid-cols-[140px_1fr_auto]">
+              <li
+                key={award.id}
+                className="grid gap-2 px-2 py-6 transition-colors duration-100 hover:bg-gray-100 md:grid-cols-[140px_1fr_auto]"
+              >
                 <span className="font-mono text-sm text-gray-500">
                   {award.awarded_on}
                 </span>

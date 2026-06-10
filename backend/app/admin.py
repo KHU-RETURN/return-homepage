@@ -3,7 +3,7 @@ from sqladmin.authentication import AuthenticationBackend
 from starlette.requests import Request
 
 from app import config
-from app.models import Application, Award
+from app.models import Activity, Application, Award, Post, User
 
 
 class AdminAuth(AuthenticationBackend):
@@ -41,6 +41,31 @@ class ApplicationAdmin(ModelView, model=Application):
     column_list = [Application.id, Application.name, Application.student_id, Application.created_at]
 
 
+class UserAdmin(ModelView, model=User):
+    name = "회원"
+    name_plural = "회원"
+    can_create = False
+    column_list = [
+        User.id, User.username, User.name, User.student_id,
+        User.role, User.is_approved, User.created_at,
+    ]
+    # 운영진이 승인 여부와 권한만 바꿀 수 있게 한다
+    form_columns = [User.role, User.is_approved]
+    column_searchable_list = [User.username, User.name]
+
+
+class PostAdmin(ModelView, model=Post):
+    name = "게시글"
+    name_plural = "게시글"
+    column_list = [Post.id, Post.board, Post.title, Post.author_id, Post.created_at]
+
+
+class ActivityAdmin(ModelView, model=Activity):
+    name = "활동"
+    name_plural = "활동"
+    column_list = [Activity.id, Activity.kind, Activity.title, Activity.semester]
+
+
 def mount_admin(app, engine):
     admin = Admin(
         app,
@@ -50,3 +75,6 @@ def mount_admin(app, engine):
     )
     admin.add_view(AwardAdmin)
     admin.add_view(ApplicationAdmin)
+    admin.add_view(UserAdmin)
+    admin.add_view(PostAdmin)
+    admin.add_view(ActivityAdmin)

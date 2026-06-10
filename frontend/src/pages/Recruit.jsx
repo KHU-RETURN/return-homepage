@@ -10,6 +10,24 @@ const fields = [
   { name: 'email', label: '이메일', type: 'email', placeholder: 'you@khu.ac.kr' },
 ]
 
+const guides = [
+  {
+    no: '01',
+    title: '누가 지원할 수 있나요',
+    body: '전공·학년 제한 없이 개발을 배우고 싶은 경희대학교 학생이라면 누구나 지원할 수 있습니다.',
+  },
+  {
+    no: '02',
+    title: '어떻게 진행되나요',
+    body: '지원서를 제출하면 운영진이 확인 후 개별 연락드립니다.',
+  },
+  {
+    no: '03',
+    title: '궁금한 점이 있다면',
+    body: '인스타그램 @khu_return으로 편하게 문의해주세요.',
+  },
+]
+
 export default function Recruit() {
   const [form, setForm] = useState(EMPTY)
   const [status, setStatus] = useState('idle') // idle | submitting | done | error
@@ -34,20 +52,28 @@ export default function Recruit() {
   return (
     <div className="mx-auto max-w-[1120px] px-6 py-24">
       <p className="font-mono text-sm text-gray-500">RECRUIT</p>
-      <h1 className="mt-4 text-4xl font-bold">모집 · 지원</h1>
+      <h1 className="mt-4 font-display text-[clamp(2.5rem,6vw,4rem)] font-bold leading-none tracking-tight">
+        모집 · 지원
+      </h1>
 
       <div className="mt-16 grid gap-16 md:grid-cols-2">
-        <section className="space-y-4 text-gray-700">
-          <h2 className="text-2xl font-bold text-ink">신입 동아리원 모집</h2>
-          <p>
-            전공·학년 제한 없이 개발을 배우고 싶은 경희대학교 학생이라면
-            누구나 지원할 수 있습니다.
-          </p>
-          <p>
-            지원서를 제출하면 운영진이 확인 후 개별 연락드립니다.
-            궁금한 점은 인스타그램 <span className="font-mono">@khu_return</span>으로
-            문의해주세요.
-          </p>
+        {/* 모집 안내: 넘버드 리스트 */}
+        <section>
+          <ul className="divide-y divide-gray-300 border-y border-gray-300">
+            {guides.map((guide) => (
+              <li key={guide.no} className="flex gap-6 py-6">
+                <span className="font-mono text-sm text-gray-500">
+                  {guide.no}
+                </span>
+                <div>
+                  <h2 className="font-bold">{guide.title}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                    {guide.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {status === 'done' ? (

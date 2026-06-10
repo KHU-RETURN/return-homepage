@@ -24,3 +24,29 @@ body {
   font-family: var(--font-sans);
   line-height: 1.7;
 }
+
+/* 마퀴 스트립: 같은 콘텐츠를 2벌 이어붙이고 -50%까지 밀면 끊김 없는 루프가 된다 */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* 장식용 아웃라인 텍스트: 글자 속을 비우고 1px 윤곽선만 남긴다 */
+.text-outline {
+  -webkit-text-stroke: 1px;
+  -webkit-text-fill-color: transparent;
+}
