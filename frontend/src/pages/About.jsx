@@ -141,7 +141,6 @@ export default function About() {
         </div>
         <ul className="mt-0 divide-y divide-gray-300 border-b border-gray-300">
           {[
-            { tag: 'HACKATHON', name: 'RE:THON', desc: 'RETURN 자체 해커톤. 아이디어부터 프로토타입까지 하룻밤에.' },
             { tag: 'GAME', name: 'RCK', desc: '동아리 내부 게임 대회. 개발 외의 방식으로도 함께 경쟁합니다.' },
             { tag: 'SOCIAL', name: '개강·종강총회', desc: '학기 시작과 끝을 함께 마무리하는 동아리 전체 모임.' },
             { tag: 'SOCIAL', name: 'MT · 밥조 · 모각코', desc: '동아리원끼리 더 가까워지는 소소한 자리들.' },
