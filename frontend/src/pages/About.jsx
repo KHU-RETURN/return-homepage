@@ -167,12 +167,15 @@ export default function About() {
           </div>
           <ul className="mt-0 divide-y divide-gray-700 border-b border-gray-700">
             {[
-              { year: '2017', text: '동아리 회칙 제정 · 쿠톤 우수상 수상' },
-              { year: '2018', text: '자체 홈페이지 구축 · C++·Python·머신러닝 교육 시작' },
-              { year: '2019', text: '창립 30주년' },
+              { year: '1988', text: '이공대학 전자계산공학과 학술동아리 RETURN 창립' },
+              { year: '1997', text: '편제 개편에 따라 공과대학 전자·전산·전파공학부로 소속 변경' },
+              { year: '1999', text: '학부 명칭 변경에 따라 전자정보학부로 소속 변경' },
+              { year: '2001', text: '학과 개칭에 따라 전자정보학부 컴퓨터공학과로 소속 변경' },
+              { year: '2010', text: '편제 개편에 따라 전자정보대학 컴퓨터공학과로 소속 변경' },
+              { year: '2017', text: '동아리 회칙 개정' },
+              { year: '2018', text: '창립 30주년 · 소프트웨어융합대학 컴퓨터공학과로 소속 변경' },
               { year: '2020', text: '오픈스터디 제도 도입' },
-              { year: '2022', text: '유니톤 9기 대상 · 의료 AI 해커톤 대구광역시장상 등 수상 다수' },
-              { year: '2023', text: '경희고 알고리즘·안드로이드 실습 강사 활동' },
+              { year: '2022', text: '인공지능학과 신설 편제 개편에 따라 컴퓨터공학부로 소속 변경' },
             ].map((item) => (
               <li key={item.year} className="flex items-baseline gap-8 py-5">
                 <span className="w-16 shrink-0 font-mono text-sm tabular-nums text-gray-500">
