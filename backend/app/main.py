@@ -39,7 +39,8 @@ DIST_DIR = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
 if DIST_DIR.exists():
     app.mount("/assets", StaticFiles(directory=DIST_DIR / "assets"), name="assets")
 
-    @app.get("/{full_path:path}", include_in_schema=False)
+    # HEAD도 허용한다(GET 전용이면 구글 사이트맵 수집기의 HEAD가 405 → "읽을 수 없음").
+    @app.api_route("/{full_path:path}", methods=["GET", "HEAD"], include_in_schema=False)
     def serve_spa(full_path: str):
         if full_path:
             candidate = (DIST_DIR / full_path).resolve()
